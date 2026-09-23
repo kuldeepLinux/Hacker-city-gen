@@ -20,7 +20,7 @@ Hacker-style procedural city generator — Matrix rain, terminal boot, sound eff
 - 📤 **PNG + JSON** export
 
 ## 🚀 Live Demo
-https://kuldeepLinux.github.io/hacker-city-gen/
+https://kuldeepLinux.github.io/Hacker-city-gen/
 
 ## 🛠 Tech
 Pure HTML + CSS + JavaScript. Zero dependencies.
