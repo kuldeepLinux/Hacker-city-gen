@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HACKER_CITY_GEN v2.0 // by Kuldeep</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="scanlines"></div>
+<div class="crt-glow"></div>
+<div class="matrix" id="matrix"></div>
+<div class="glitch-overlay" id="glitchOverlay"></div>
+
+<header>
+  <pre class="ascii">
+ ██╗  ██╗ █████╗  ██████╗██╗  ██╗███████╗██████╗ 
+ ██║  ██║██╔══██╗██╔════╝██║ ██╔╝██╔════╝██╔══██╗
+ ███████║███████║██║     █████╔╝ █████╗  ██████╔╝
+ ██╔══██║██╔══██║██║     ██╔═██╗ ██╔══╝  ██╔══██╗
+ ██║  ██║██║  ██║╚██████╗██║  ██╗███████╗██║  ██║
+ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
+  </pre>
+  <p class="sub">// CITY SYNTHESIS ENGINE v2.0 //</p>
+  <p class="credit">MADE BY KULDEEP</p>
+</header>
+
+<div id="boot" class="boot"></div>
+
+<!-- Tabs -->
+<div class="tabs" id="tabs" style="display:none;">
+  <button class="tab active" data-tab="gen">⚙ GEN</button>
+  <button class="tab" data-tab="stats">📊 STATS</button>
+  <button class="tab" data-tab="compare">⚔ COMPARE</button>
+  <button class="tab" data-tab="saved">💾 SAVED</button>
+  <button class="tab" data-tab="map">🗺 MAP</button>
+</div>
+
+<!-- GENERATOR TAB -->
+<div class="panel" id="tab-gen" style="display:none;">
+  <div class="controls">
+    <div class="row">
+      <label>GRID_SIZE <span id="sizeVal">40</span></label>
+      <input type="range" id="size" min="20" max="60" value="40">
+    </div>
+    <div class="row">
+      <label>DENSITY <span id="densityVal">6</span></label>
+      <input type="range" id="density" min="1" max="10" value="6">
+    </div>
+    <div class="row">
+      <label>HEIGHT_MULT <span id="heightVal">5</span></label>
+      <input type="range" id="height" min="1" max="10" value="5">
+    </div>
+    <div class="row">
+      <label>SEED_KEY</label>
+      <input type="number" id="seed" value="42">
+    </div>
+    <div class="btns">
+      <button id="generate">▶ EXECUTE</button>
+      <button id="save">💾 SAVE</button>
+      <button id="exportPng">⬇ PNG</button>
+      <button id="exportJson">⬇ JSON</button>
+    </div>
+  </div>
+  <canvas id="canvas" width="600" height="600"></canvas>
+  <div id="stats" class="stats"></div>
+</div>
+
+<!-- STATS TAB -->
+<div class="panel" id="tab-stats" style="display:none;">
+  <h2 class="panel-title">📊 DEEP SCAN</h2>
+  <div id="statsDetail" class="stats"></div>
+  <canvas id="chart" width="600" height="300"></canvas>
+</div>
+
+<!-- COMPARE TAB -->
+<div class="panel" id="tab-compare" style="display:none;">
+  <h2 class="panel-title">⚔ CITY DUEL</h2>
+  <div class="compare-grid">
+    <div>
+      <label>CITY A SEED</label>
+      <input type="number" id="seedA" value="42">
+      <canvas id="canvasA" width="300" height="300"></canvas>
+    </div>
+    <div>
+      <label>CITY B SEED</label>
+      <input type="number" id="seedB" value="99">
+      <canvas id="canvasB" width="300" height="300"></canvas>
+    </div>
+  </div>
+  <button id="duel">⚔ RUN DUEL</button>
+  <div id="duelResult" class="stats"></div>
+</div>
+
+<!-- SAVED TAB -->
+<div class="panel" id="tab-saved" style="display:none;">
+  <h2 class="panel-title">💾 SAVED CITIES</h2>
+  <div id="savedList" class="stats">No cities saved yet.</div>
+  <button id="clearSaved">🗑 CLEAR ALL</button>
+</div>
+
+<!-- MAP TAB -->
+<div class="panel" id="tab-map" style="display:none;">
+  <h2 class="panel-title">🗺 REAL MAP LOADER</h2>
+  <div class="row">
+    <label>LATITUDE</label>
+    <input type="number" id="lat" value="28.6139" step="0.01">
+  </div>
+  <div class="row">
+    <label>LONGITUDE</label>
+    <input type="number" id="lon" value="77.2090" step="0.01">
+  </div>
+  <button id="loadMap">📍 LOAD REAL CITY</button>
+  <canvas id="canvasMap" width="600" height="600"></canvas>
+  <div id="mapStatus" class="stats"></div>
+</div>
+
+<footer class="footer">
+  <p>© 2026 HACKER_CITY_GEN v2.0 // CRAFTED BY <span>KULDEEP</span></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
